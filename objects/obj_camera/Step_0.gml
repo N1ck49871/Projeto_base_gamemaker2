@@ -1,7 +1,15 @@
 /// @description Inserir descrição aqui
 // Você pode escrever seu código neste editor
+
 // Obtenha a instância do jogador
 var jogador = instance_find(obj_player, 0);
+
+// Defina as margens e a velocidade da câmera
+var margem_esquerda = 100; // Defina um valor adequado
+var margem_direita = 100; // Defina um valor adequado
+var margem_superior = 100; // Defina um valor adequado
+var margem_inferior = 100; // Defina um valor adequado
+var velocidade_camera = 5; // Defina um valor adequado
 
 // Calcule a posição da câmera em relação ao jogador
 var camera_x = camera_get_view_x(view_current);
