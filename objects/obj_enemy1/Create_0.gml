@@ -10,3 +10,4 @@ sprite_index = spr_enemy1; // Define o sprite inicial do inimigo como sprite de 
 alcance_ataque = 10; // Define o alcance de ataque do inimigo (ajuste conforme necessário)
 intervalo_ataque = 60; // Define o intervalo entre os ataques em número de frames (ajuste conforme necessário)
 tempo_ataque = 0; // Inicializa o temporizador de ataque
+vida = 3;

@@ -38,18 +38,37 @@ if (x <= obj_plat.x || x >= obj_plat.x + obj_plat_width) {
 var distancia_para_player = distance_to_object(obj_player);
 
 // Verifica se pode atacar
-if (distancia_para_player <= alcance_ataque && tempo_ataque <= 0) {
+if (distancia_para_player <= alcance_ataque and tempo_ataque <= 0) {
    // Faça o inimigo atacar o obj_player
-   // Coloque o código de ataque aqui
+   velocidade_horizontal = 0;
+   sprite_index = spr_enemy1_attack;
+   if obj_enemy1.image_index == 8 {
+    if obj_player.vida > 0 {
+        obj_player.vida -= 1;
+		show_debug_message("inimigo atacou o jogador");
+		if(image_index == image_number -1){
+		image_index = 0;
+		}
+    }
+}
    tempo_ataque = intervalo_ataque; // Reinicia o temporizador de ataque
 } else {
    // Move em direção ao objeto jogador
+   velocidade_horizontal = 1
    var direcao = sign(obj_player.x - x);
    velocidade_horizontal = abs(velocidade_horizontal) * direcao;
    image_xscale = direcao; // Altera a escala horizontal do sprite com base na direção
+   if(velocidade_horizontal = 0){
+   sprite_index = spr_enemy1;
+   }else{
+   sprite_index = spr_enemy1_walk;
+   }
 }
 
 // Atualiza o temporizador de ataque
 if (tempo_ataque > 0) {
    tempo_ataque -= 1; // Reduz o tempo restante para o próximo ataque
+}
+if vida <=0{
+instance_destroy();
 }
